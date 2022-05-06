@@ -46,7 +46,26 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         botao_limpar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
                 txtExpressao.setText("");
+                txtResultado.setText("");
+            }
+        });
+
+        backspace.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                TextView expressao = findViewById(R.id.txt_expressao);
+                String string = expressao.getText().toString();
+
+                if(!string.isEmpty()){
+
+                    byte var0 = 0;
+                    int var1 = string.length()-1;
+                    String txtExpressao = string.substring(var0,var1);
+                    expressao.setText(txtExpressao);
+                }
                 txtResultado.setText("");
             }
         });
